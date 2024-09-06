@@ -1,0 +1,254 @@
+header{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 90%;
+    margin: auto;
+}
+
+/* next */
+
+.header-main{
+    width: 100%;
+    height: 860px;
+    margin-top: 90px;
+}
+
+.header-main-bg{
+    width: 100%;
+    height: 533px;
+    background-image: url(./Header-img/Rectangle\ 3.svg);
+    background-position: center center;
+    background-size: cover;
+    border-radius: 40px;
+}
+
+.header-main-title{
+    padding: 60px;
+    width: 411px;
+    height: 243px;
+    font-size: 60px;
+    font-weight: 800;
+}
+
+.kid-in-space-absolute{
+    position: relative;
+}
+
+.kid{
+    background-image: url(./Header-img/lost-in-space-3d-cute-girl-in-astronaut-costume-transparent-background-free-png\ 1.png);
+    background-size: cover;
+    width: 700px;
+    height: 700px;
+    position: absolute;
+    bottom: -120px;
+    right: 0;
+    bottom: -170px;
+}
+
+.space-walk-card, .exer-walk-card{
+    width: 337px;
+    height: 200px;
+    background-color: #fff;
+    position: absolute;
+    color: #020305;
+    border-radius: 24px;
+    bottom: 0;
+    right: 0;
+    box-shadow: 0px 20px 39px -12px #63757c62;
+}
+
+.space-walk-card{
+    right: 400px;
+}
+
+.exer-walk-card{
+    width: 266px;
+    height: 145px;
+    bottom: 150px;
+}
+
+.card-logo-image1, .card-logo-image2, .card-logo-image3{
+    background-image: url(./Header-img/chart-pie.png);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    position: relative;
+    top: 8px;
+}
+
+.card-logo-image2{
+    background-image: url(./Header-img/Group\ 113.png);
+}
+
+.card-logo-image3{
+    background-image: url(./Header-img/stopwatch.png);
+}
+
+.header-card-logo{
+    width: 40px;
+    height: 40px;
+    background-color: #A9C2CB;
+    border-radius: 12px;
+    position: absolute;
+}
+
+.log-and-name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.header-card-title{
+    color: #020305;
+    font-weight: 600;
+    font-size: 18px;
+    margin-left: 50px;
+}
+
+.header-card-title, .header-card-logo{
+    margin-top: 30px;
+}
+
+/* now content of card */
+
+.spacewalk-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.lineGraph{
+    width: 191px;
+    height: 98px;
+    background-image: url(./Header-img/card-image/spacewalks/OBJECTS.svg);
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.pieGraph{
+    width: 94px;
+    height: 94px;
+    background-image: url(./Header-img/card-image/spacewalks/OBJECTS-1.svg);
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    left: 222px;
+    top: 20px;
+}
+
+
+.exer-content{
+    position: relative;
+}
+
+.heartGraph{
+    width: 191px;
+    height: 42px;
+    background-image: url(./Header-img/card-image/exercise/Vector.svg);
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top: 30px;
+    left: 40px;
+}
+
+.total-walk-card{
+    width: 464px;
+    height: 130px;
+    background-color: #020305;
+    border-radius: 24px;
+    position: absolute;
+    right: 60px;
+    top: 100px;
+}
+
+.total-walk-card .log-and-name .header-card-title{
+    color: white;
+}
+
+.totaWalkContent{
+    position: relative;
+}
+
+.totalWalkContentText{
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 11px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+
+
+/* Header main coontent  */
+
+.headerMainContent{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ourMission{
+    color: #171E27;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 27px;
+}
+
+.bottomOfHMC{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.GetStartedButton{
+    width: 225px;
+}
+
+.WatchVideo{
+    display: flex;
+    flex-direction: row;
+    margin-left: 77px;
+    align-items: center;
+}
+
+.watchVideoText{
+    color: #020305;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.watchTheVideoButton{
+    width: 40px;
+    height: 40px;
+    background-color: #A9C2CB;
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.WatchTheVideoButtonImage{
+    width: 20px;
+    height: 20px;
+    background-image: url(Header-img/Play.svg);
+}
+
+.spaceCompanyLogo{
+    width: 1300px;
+    height: 204px;
+    background-image: url(./Header-img/Group\ 120.svg);
+    background-size: cover;
+    margin: auto;
+}

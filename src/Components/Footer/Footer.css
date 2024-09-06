@@ -1,0 +1,58 @@
+footer{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    text-decoration: none;
+    color: black;
+}
+
+.footer-up{
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-logo{
+    background-image: url(./FooterImg/Odyssey.svg);
+    width: 118px;
+    height: 26px;
+    background-repeat: no-repeat;
+}
+
+.footer-logo-parent{
+    width: 33%;
+}
+
+.center-footer{
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    gap: 30px;
+}
+
+.center-footer-link{
+    color: #020305;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.footer-right{
+    width: 33%;
+    display: flex;
+    justify-content: right;
+    gap: 30px;
+}
+
+.footer-right-link{
+    color: #020305;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.footer-down{
+    margin: 0 auto;
+    margin-top: 50px;
+}

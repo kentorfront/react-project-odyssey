@@ -1,0 +1,90 @@
+.stayConnectedCard{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    height: 500px;
+}
+
+.stay-connected-cards-parent{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 100px;
+}
+
+.stayConnected-card-newsletter{
+    height: 350px;
+    width: 290px;
+    border-radius: 24px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 20px 45px -10px #0d0f1281;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 100px;
+    font-size: 18px;
+    padding: 0 20px;
+}
+
+.stayConnected-title{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.newsletter-button{
+    width: 140px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.social-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.git{
+    width: 30px;
+    height: 30px;
+    background-image: url(./StayConnectedImg/github.png);
+    background-size: cover;
+}
+
+.tg{
+    width: 30px;
+    height: 30px;
+    background-image: url(./StayConnectedImg/telegram.png);
+    background-size: cover;
+}
+
+.whats{
+    width: 30px;
+    height: 30px;
+    background-image: url(./StayConnectedImg/whatsapp.png);
+    background-size: cover;
+}
+
+.stayConnected-card-social{
+    height: 350px;
+    width: 290px;
+    border-radius: 24px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 20px 45px -10px #0d0f1281;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 100px;
+    font-size: 18px;
+    padding: 0 20px;
+}

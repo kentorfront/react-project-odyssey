@@ -1,0 +1,19 @@
+.NotFound{
+    width: 50%;
+    margin: 0 auto;
+    font-size: 24px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.NotFound span{
+    font-weight: 900;
+    font-size: 30px;
+}
+
+.NotFound a{
+    margin-top: 15px;
+}

@@ -1,0 +1,45 @@
+.logo-nav{
+    background-image: url(./navImage/Odyssey.svg);
+    width: 205px;
+    height: 32px;
+    background-size: cover;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.nav-links a{
+    color: #020305;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22.68px;
+}
+
+.nav-links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-button, .GetStartedButton{
+    width: 160px;
+    height: 67px;
+    background-color: #020305;
+    color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 20px 45px -10px #0d0f1281;
+}
