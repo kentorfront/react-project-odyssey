@@ -2,13 +2,14 @@
 import React, { Suspense } from 'react';
 import './Main.css';
 import { Canvas } from '@react-three/fiber' 
+import { Link } from 'react-router-dom'
 import Mars from './Planets/Mars/Mars';
 import Venus from './Planets/Venus/Venus';
 import Jupiter from './Planets/Jupiter/Jupiter'
 import Mercury from './Planets/Mercury/Mercury'
 import Header from './Header/Header'
 
-export default function Main() {
+export default function Main() {    
     return (
         <>
             <Header />
@@ -22,7 +23,7 @@ export default function Main() {
                         </Canvas>
                     </div>
                     <div className='card-main-title'>Send Your Message <br></br> To Space</div>
-                    <button className='card-main-button'>Send</button>
+                    <Link to='/createMessage'><button className='card-main-button'>Send</button></Link>
                 </div>
 
                 <div className='card-main'>
@@ -34,7 +35,7 @@ export default function Main() {
                         </Canvas>
                     </div>
                     <div className='card-main-title'>Send Your Message <br></br> To Space</div>
-                    <button className='card-main-button'>Send</button>
+                    <Link to='/createMessage'><button className='card-main-button'>Send</button></Link>
                 </div>
                 <div className='card-main'>
                     <div className='threeDModel'>
@@ -45,7 +46,7 @@ export default function Main() {
                         </Canvas>
                     </div>
                     <div className='card-main-title'>Send Your Message <br></br> To Space</div>
-                    <button className='card-main-button'>Send</button>
+                    <Link to='/createMessage'><button className='card-main-button'>Send</button></Link>
                 </div>
                 <div className='card-main'>
                     <div className='threeDModel'>
@@ -56,7 +57,7 @@ export default function Main() {
                         </Canvas>
                     </div>
                     <div className='card-main-title'>Send Your Message <br></br> To Space</div>
-                    <button className='card-main-button'>Send</button>
+                    <Link to='/createMessage'><button className='card-main-button'>Send</button></Link>
                 </div>
             </div>
         </>

@@ -10,7 +10,7 @@ export default function Nav(){
             
             <div className="nav-links">
                 <Link to='/stay-connected'>Stay Connected</Link>
-                <a className="link-nav" href="#">Education</a>
+                <Link to='/review'>Reviews</Link>
                 <a className="link-nav" href="#">Community</a>
                 <a className="link-nav" href="#">About Us</a>
                 <Link to='/login'><button className="nav-button">Log In</button></Link>

@@ -17,8 +17,8 @@ export default function StayConnected(){
                 <div className="stayConnected-card-social">
                     <div className="socialTitle">Be connect directly with our socials</div>
                     <div className="social-icons">
-                        <a href=""></a><div className="git"></div>
-                        <div className="tg"></div>
+                        <a href="https://github.com/kentorfront"><div className="git"></div></a>
+                        <a href="t.me/adolf"><div className="tg"></div></a>
                         <div className="whats"></div>
                     </div>
                 </div>
