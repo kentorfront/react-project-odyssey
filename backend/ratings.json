@@ -1,14 +1,14 @@
 [
   {
-    "name": "adsasddas",
-    "score": 3
+    "id": 3,
+    "name": "фыв",
+    "rDesc": "фывфывфывфыв",
+    "score": 4
   },
   {
-    "name": "asd",
-    "score": 2
-  },
-  {
-    "name": "adsads",
+    "id": 4,
+    "name": "asdasd",
+    "rDesc": "asdasd",
     "score": 4
   }
 ]

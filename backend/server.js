@@ -1,40 +1,90 @@
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
-const fs = require('fs');
+const fs = require('fs').promises;
 const path = require('path');
 
 const app = express();
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
-const dataFilePath = path.join(__dirname, 'ratings.json'); // Путь к JSON файлу
+const dataFilePath = path.join(__dirname, 'ratings.json');
 
-// Функция для чтения данных из файла
-const readDataFromFile = () => {
-  if (fs.existsSync(dataFilePath)) {
-    const data = fs.readFileSync(dataFilePath);
+const readDataFromFile = async () => {
+  try {
+    const data = await fs.readFile(dataFilePath, 'utf-8');
     return JSON.parse(data);
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      return [];
+    }
+    throw error;
   }
-  return []; // Если файл не существует, возвращаем пустой массив
 };
 
-// Функция для записи данных в файл
-const writeDataToFile = (data) => {
-  fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
+const writeDataToFile = async (data) => {
+  await fs.writeFile(dataFilePath, JSON.stringify(data, null, 2), 'utf-8');
 };
 
-let ratings = readDataFromFile(); // Загружаем данные при запуске сервера
+let ratingsCache;
+
+const initializeCache = async () => {
+  ratingsCache = await readDataFromFile();
+};
+
+initializeCache();
 
 app.get('/review', (req, res) => {
-  res.json(ratings);
+  res.json(ratingsCache);
 });
 
-app.post('/review', (req, res) => {
-  const newRating = req.body;
-  ratings.push(newRating);
-  writeDataToFile(ratings); // Сохраняем данные в файл
-  res.status(201).json(newRating);
+app.get('/review/:id', async (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  const data = await readDataFromFile();
+  const rating = data.find(r => r.id === id);
+  
+  if (rating) {
+    res.json(rating);
+  } else {
+    res.status(404).json({ message: 'Rating not found' });
+  }
+});
+
+app.post('/review', async (req, res) => {
+  const { name, score, rDesc } = req.body;
+
+  try {
+    ratingsCache = await readDataFromFile();
+    let user = ratingsCache.find(rating => rating.name === name);
+
+    let lastElementId = ratingsCache.length > 0 
+      ? Math.max(...ratingsCache.map(rating => rating.id)) 
+      : 0;
+
+    if (!user) {
+      user = {
+        id: lastElementId + 1,
+        name,
+        rDesc,
+        score
+      };
+      ratingsCache.push(user);
+    } else {
+      user.score = score;
+      user.rDesc = rDesc;
+    }
+
+    await writeDataToFile(ratingsCache);
+    res.status(201).json(user);
+  } catch (error) {
+    res.status(500).json({ message: 'Error writing data', error });
+  }
+});
+
+app.delete('/review/:id', async (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  ratingsCache = ratingsCache.filter(r => r.id !== id);
+  await writeDataToFile(ratingsCache);
+  res.status(200).json({ message: `Review with ID ${id} deleted.` });
 });
 
 const PORT = 5000;

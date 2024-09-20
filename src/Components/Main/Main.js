@@ -10,6 +10,7 @@ import Mercury from './Planets/Mercury/Mercury'
 import Header from './Header/Header'
 
 export default function Main() {    
+
     return (
         <>
             <Header />
@@ -23,7 +24,7 @@ export default function Main() {
                         </Canvas>
                     </div>
                     <div className='card-main-title'>Send Your Message <br></br> To Space</div>
-                    <Link to='/createMessage'><button className='card-main-button'>Send</button></Link>
+                    <Link to='/planetDescription/1'><button className='card-main-button'>More</button></Link>
                 </div>
 
                 <div className='card-main'>
@@ -35,7 +36,7 @@ export default function Main() {
                         </Canvas>
                     </div>
                     <div className='card-main-title'>Send Your Message <br></br> To Space</div>
-                    <Link to='/createMessage'><button className='card-main-button'>Send</button></Link>
+                    <Link to='/planetDescription/2'><button className='card-main-button'>More</button></Link>
                 </div>
                 <div className='card-main'>
                     <div className='threeDModel'>
@@ -46,7 +47,7 @@ export default function Main() {
                         </Canvas>
                     </div>
                     <div className='card-main-title'>Send Your Message <br></br> To Space</div>
-                    <Link to='/createMessage'><button className='card-main-button'>Send</button></Link>
+                    <Link to='/planetDescription/3'><button className='card-main-button'>More</button></Link>
                 </div>
                 <div className='card-main'>
                     <div className='threeDModel'>
@@ -57,7 +58,7 @@ export default function Main() {
                         </Canvas>
                     </div>
                     <div className='card-main-title'>Send Your Message <br></br> To Space</div>
-                    <Link to='/createMessage'><button className='card-main-button'>Send</button></Link>
+                    <Link to='/planetDescription/4'><button className='card-main-button'>More</button></Link>
                 </div>
             </div>
         </>
