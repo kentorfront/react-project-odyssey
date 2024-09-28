@@ -35,7 +35,7 @@ const AddRating = () => {
 
     const newRating = { name, rDesc, score: parseInt(score) };
     try {
-      const response = await axios.post('http://localhost:5000/review', newRating);
+      const response = await axios.post('http://localhost:8080/review', newRating);
       dispatch(addRating(response.data));
       setName('');
       setScore('');

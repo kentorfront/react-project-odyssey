@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { setRatings, delRating, editRating } from './ratingsSlice';
-import Preloader from '../Preloader/Preloder';
+import Preloader from '../Preloader/Preloader';
 import { TiDelete } from "react-icons/ti";
 import { MdEdit } from "react-icons/md";
 
@@ -14,8 +14,8 @@ const RatingList = (props) => {
   const [edit, setEdit] = useState(false);
 
   const [valueRDesc, setValueRDesc] = useState("");
-  const [valueScore, setValueScore] = useState(1);
-  
+  const [valueScore, setValueScore] = useState(1);  
+  const [valueName, setValueName] = useState("")
 
   const [currentEditId, setCurrentEditId] = useState(null); 
 
@@ -26,7 +26,7 @@ const RatingList = (props) => {
   useEffect(() => {
     const fetchRatings = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/review');
+        const response = await axios.get('http://localhost:8080/review');
         dispatch(setRatings(response.data));
         setLoading(false); 
       } catch (error) {
@@ -39,7 +39,7 @@ const RatingList = (props) => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:5000/review/${id}`)
+      .delete(`http://localhost:8080/review/${id}`)
       .then((response) => {
         dispatch(delRating(id));
       })
@@ -51,6 +51,7 @@ const RatingList = (props) => {
   const handleEdit = (rating) => {
     setEdit(true);
     setCurrentEditId(rating.id); 
+    setValueName(rating.name)
     setValueRDesc(rating.rDesc);
     setValueScore(rating.score);
   };
@@ -59,14 +60,12 @@ const RatingList = (props) => {
     const updatedRating = {
       rDesc: valueRDesc,
       score: valueScore,
+      name: valueName,
     };
 
-    axios.put(`http://localhost:5000/review/${id}`, updatedRating)
+    axios.put(`http://localhost:8080/review/${id}`, updatedRating)
       .then((response) => {
-        // Dispatch the editRating action with the id and updated rating values
         dispatch(editRating({ id, updatedRating }));
-
-        // Optionally, exit edit mode or show success message
         setEdit(false);
       })
       .catch((error) => {
@@ -75,7 +74,6 @@ const RatingList = (props) => {
 
     setEdit(false);
     setCurrentEditId(null);
-    // You might need to dispatch an action to update the Redux store after editing
   };
 
   useEffect(() => {
@@ -117,7 +115,7 @@ const RatingList = (props) => {
   }
 
   return (
-    <div>
+    <div className='allReviewsContainer'>
       {!edit ? (
         <>
           <h2>Все отзывы</h2>
@@ -128,12 +126,14 @@ const RatingList = (props) => {
                   <div className='upCard'>
                     <div className='name'>{rating.name}</div>
                     <div className='stars'>{renderStars(rating.score)}</div>
-                    <button className='delButton' onClick={() => handleDelete(rating.id)}>
-                      <TiDelete />
-                    </button>
-                    <button className='editButton' onClick={() => handleEdit(rating)}>
-                      <MdEdit />
-                    </button>
+                    <div className='buttons'>
+                      <button className='delButton' onClick={() => handleDelete(rating.id)}>
+                        <TiDelete />
+                      </button>
+                      <button className='editButton' onClick={() => handleEdit(rating)}>
+                        <MdEdit />
+                      </button>
+                    </div>
                   </div>
                   <div className='downCard'>
                     <div className='allReview'>{rating.rDesc}</div>

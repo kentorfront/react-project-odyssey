@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import PlanetDescription from "./PlanetDescription";
 import { useParams } from "react-router-dom";
-import Preloader from "../../../Preloader/Preloder"; 
+import Preloader from "../../../Preloader/Preloader"; 
 
 export default function PlanetDescContainer() {
     const [planets, setPlanets] = useState([]);

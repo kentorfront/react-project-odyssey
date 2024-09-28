@@ -1,0 +1,8 @@
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+.emailInput, .passwordInput, .usernameInput{
+    position: relative;
+}
